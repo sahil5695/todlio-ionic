@@ -1,0 +1,33 @@
+<ion-view>
+
+		<ion-nav-bar class = "color-bar" style="background: #2196F3">
+			<ion-nav-title>
+					<div class="h1 title logo" style="font-size: 1.5em;font-weight: 700;margin-top: 3px;">Todlio</div>
+			</ion-nav-title>
+			<ion-nav-buttons side = "primary">
+					<button class="button button-icon icon ion-ios-person" style="color:#fff;" ng-click = "openModal()"></button>
+			</ion-nav-buttons>
+			<ion-nav-buttons side = "secondary">
+					<button class="button button-icon icon ion-android-add" style="color:#fff;"></button>
+			</ion-nav-buttons>
+		</ion-nav-bar>
+
+	<ion-content>
+		 
+		 <ion-list>
+			<ion-item class="item-remove-animate item-icon-right" ng-repeat="article in articles" type="item-text-wrap" href="#/article/{{article._id}}">
+
+        <h2 style="font-size: 1.3em">{{ article.title }}</h2>
+        <p>{{ article.note_date | date : "H:m  EEE, MMM d, y" }}</p>
+        <i class="icon ion-chevron-right icon-accessory"></i>
+
+        <ion-option-button class="button-assertive">
+          Delete
+        </ion-option-button>
+
+      </ion-item>
+    </ion-list>
+
+   </ion-content>
+
+</ion-view>
